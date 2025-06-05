@@ -1,0 +1,715 @@
+/* General Body and Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for dark mode */
+}
+
+/* Loading Spinner */
+.spinner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #007bff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.spinner {
+    width: 70px;
+    height: 70px;
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 8px solid #fff;
+    animation: spin 1.2s linear infinite;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #007bff;
+    font-weight: 700;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Darker background */
+    color: #e0e0e0;
+}
+
+/* Scroll to Top Button Styles */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position on the screen */
+    bottom: 20px; /* Adjust as needed, considering your dark mode button */
+    right: 80px; /* Positioned to the left of your dark mode button */
+    z-index: 99; /* Ensure it's above other content but below your dark mode button */
+    border: none; /* No border */
+    outline: none; /* No outline on focus */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent dark background */
+    color: white; /* White arrow */
+    cursor: pointer; /* Pointer on hover */
+    padding: 10px; /* Padding inside the button */
+    border-radius: 50%; /* Make it round */
+    font-size: 18px; /* Size of the arrow icon */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+}
+
+#scrollToTopBtn:hover {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker on hover */
+}
+
+/* Style for the SVG icon within the button */
+#scrollToTopBtn svg {
+    display: block; /* Ensures proper sizing */
+    width: 24px; /* Adjust SVG width */
+    height: 24px; /* Adjust SVG height */
+    fill: currentColor; /* Inherits color from the button text color */
+}
+
+body.dark-mode header,
+body.dark-mode section, /* Apply to all sections */
+body.dark-mode section.section-alt, /* Ensure alt sections also get dark background */
+body.dark-mode .education-item,
+body.dark-mode .experience-item,
+body.dark-mode .project-item,
+body.dark-mode .skills-list li,
+body.dark-mode .contact-card, /* New: for contact section cards */
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #1a1a1a; /* Even darker elements */
+    color: #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Darker shadow for depth */
+}
+
+body.dark-mode .logo,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #8bbcdc; /* Blueish tint for headings in dark mode */
+}
+
+body.dark-mode .nav-links a,
+body.dark-mode a {
+    color: #a4d8ed; /* Lighter link color in dark mode */
+}
+
+body.dark-mode .nav-links a:hover,
+body.dark-mode a:hover {
+    color: #d0e8f2; /* Lighter link hover in dark mode */
+}
+
+body.dark-mode .btn {
+    background: #0099ff;
+    color: #f0f0f0; /* Ensure button text is visible */
+}
+
+body.dark-mode .btn:hover {
+    background: #007acc;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    border: 1px solid #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .contact-form input::placeholder,
+body.dark-mode .contact-form textarea::placeholder {
+    color: #a0a0a0; /* Placeholder text in dark mode */
+}
+
+body.dark-mode .contact-form input:focus,
+body.dark-mode .contact-form textarea:focus {
+    border-color: #0099ff;
+    box-shadow: 0 0 8px rgba(0, 153, 255, 0.6);
+}
+
+body.dark-mode footer {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer-links a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer-links a:hover {
+    color: #8bbcdc;
+}
+
+body.dark-mode .burger div {
+    background-color: #e0e0e0; /* Burger lines in dark mode */
+}
+
+/* General Link and Button Styles */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background: #007bff;
+    color: #fff !important; /* Force white text */
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0056b3;
+    text-decoration: none;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+/* Header and Navigation */
+header {
+    background: #fff;
+    color: #333;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #007bff; /* Kept blue as requested for header */
+    font-weight: 700; /* Make it bold */
+    transition: color 0.3s ease;
+}
+
+/* Gradient Text Animation for Hero Section Name */
+.hero-section .gradient-text { /* Targeted specifically for hero section */
+    background: linear-gradient(45deg, #e0b0ff, #00ffff); /* Light colors for hero contrast */
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShiftHero 4s ease infinite alternate; /* Slower, smoother animation */
+    display: inline-block; /* Essential for text gradients */
+}
+
+@keyframes gradientShiftHero {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #333;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Burger menu for mobile */
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    z-index: 1001;
+}
+
+.burger div {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.6)), url('https://via.placeholder.com/1500x800/007bff/ffffff?text=Cybersecurity+Background') no-repeat center center/cover; /* Replace with a suitable background image */
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #fff; /* Base color for 'Hello, I'm ' */
+}
+
+.hero-content .tagline {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #e2e6ea;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #e2e6ea;
+}
+
+/* Section Styling */
+section {
+    padding: 60px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease, color 0.3s ease; /* For dark mode transition */
+}
+
+.section-alt {
+    background-color: #f9f9f9;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 60px;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+/* About Section */
+.about-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Consistent Hover Effect for all 'boxes' */
+.education-item,
+.experience-item,
+.project-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Slightly more prominent shadow */
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* All transitions */
+}
+
+.education-item:hover,
+.experience-item:hover,
+.project-item:hover {
+    transform: translateY(-7px); /* Increased movement */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* More prominent shadow on hover */
+}
+
+.education-item h3, .experience-item h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.education-item p, .experience-item p {
+    margin-bottom: 5px;
+}
+
+.education-item ul, .experience-item ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.education-item ul li, .experience-item ul li {
+    margin-bottom: 5px;
+}
+
+/* Skills Section */
+.skills-section, .projects-section {
+    margin-bottom: 40px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.skills-list li.skill-item { /* Added skill-item class for consistency and targeting */
+    background: #e9ecef;
+    padding: 15px 20px; /* Increased padding for better feel */
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* All transitions */
+}
+
+.skills-list li.skill-item:hover {
+    background-color: #d3d9df;
+    transform: translateY(-5px) scale(1.03); /* Subtle movement on hover */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.project-item h4 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+/* Contact Section - Minimal & Visually Appealing */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px; /* Increased gap */
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.contact-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Nicer shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px); /* More significant lift */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25); /* Stronger shadow on hover */
+}
+
+.contact-link {
+    display: block; /* Make the whole card clickable */
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.contact-link:hover {
+    text-decoration: none; /* No underline on hover for entire card */
+}
+
+.contact-icon {
+    font-size: 3rem; /* Larger icons */
+    color: #007bff;
+    margin-bottom: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.1); /* Icon pops */
+}
+
+.contact-text {
+    margin: 0;
+    word-wrap: break-word; /* Ensure long emails wrap */
+}
+
+.contact-form {
+    max-width: 700px; /* Slightly wider form */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased gap */
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px; /* Larger padding */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* More rounded */
+    font-size: 1.05rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
+.contact-form button {
+    cursor: pointer;
+    border: none;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0; /* Increased padding */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 12px; /* Slightly more space */
+    font-size: 1.6rem; /* Slightly larger icons */
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Badge Container */
+.badges-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.badge {
+    max-width: 90px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.badge:hover {
+    transform: translateY(-3px) scale(1.05); /* Slight scale on badge hover */
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 55px; /* Slightly larger */
+    height: 55px; /* Slightly larger */
+    font-size: 1.6rem; /* Larger icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    z-index: 1002;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-top: 5rem;
+    }
+    body.dark-mode .nav-links {
+        background-color: #222222;
+    }
+
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links a {
+        color: #fff;
+        font-size: 1.2rem;
+    }
+    body.dark-mode .nav-links a {
+        color: #e0e0e0;
+    }
+
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content .tagline {
+        font-size: 1.2rem;
+    }
+
+    .skills-list {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    footer .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .badges-container {
+        flex-wrap: wrap;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack contact cards on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content .tagline {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .skills-list {
+        grid-template-columns: 1fr;
+    }
+}

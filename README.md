@@ -1,3 +1,3 @@
-# Minimal Portfolio HTML Template
+# My Portfolio
 
-An HTML Template for a minimal portfolio. Made with Bootstrap and modernizr.js for great compatibility.
+* All the files for my portfolio are here

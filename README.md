@@ -12,15 +12,16 @@ Welcome to my personal portfolio site! I'm an entry-level Cybersecurity graduate
 
 ## 📁 Features
 
-- **Responsive Design** — Looks great on mobile, tablet, and desktop.
-- **Collapsible Sections** — For experience and projects.
-- **Dropdown Navigation** — For accessing additional links like GitHub and LinkedIn.
-- **Smooth Scrolling** — Enhanced user experience with smooth transitions.
-- **Profile Image** — Easily customizable with your own photo.
+- **Responsive Design** 
+- **Collapsible Sections**
+- **Dropdown Navigation**
+- **Smooth Scrolling**
+- **Profile Image**
+- **Toggle Dark/Light Mode**
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 Tools
 
 - HTML
 - CSS

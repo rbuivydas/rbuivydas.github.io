@@ -42,5 +42,5 @@ Welcome to my personal portfolio site! I'm an entry-level Cybersecurity graduate
 To run this project locally:
 
 ```bash
-git clone https://github.com/<your-username>/<repository-name>.git
-cd <repository-name>
+git clone https://github.com/rbuivydas/rbuivydas.git
+cd rbuivydas.github.io

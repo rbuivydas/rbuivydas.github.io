@@ -31,7 +31,9 @@ Welcome to my personal portfolio site! I'm an entry-level Cybersecurity graduate
 
 ## 📸 Preview
 
-![Screenshot of website](screenshot.png)  
+![Light Mode](screenshot.png)  
+
+![Dark Mode](screenshot_dark.png)
 
 ---
 

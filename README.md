@@ -22,9 +22,9 @@ Welcome to my personal portfolio site! I'm an entry-level Cybersecurity graduate
 
 ## 🛠 Tech Stack
 
-- HTML5
-- CSS3 (Flexbox, Media Queries, Variables)
-- JavaScript (Vanilla JS)
+- HTML
+- CSS
+- JavaScript
 
 ---
 
